@@ -1,9 +1,13 @@
 // pragma statements will go here
 
-#include <stdio.h>
-// Include statements from other files will go here
+// Include statements from other files 
 
-task main() 
+#include "arms.c"
+#include "claws.c"
+#include "drive.c"
+#include "utils.c"
+
+task main()
 {
 
 }
