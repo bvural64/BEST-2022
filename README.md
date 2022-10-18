@@ -1,5 +1,5 @@
 # Code for Pulaski Academy's VEX Robot used in BEST 2022
-~~## TODO (that we can do without having a drive train built):~~
+## ~~TODO (that we can do without having a drive train built):~~
   ~~1. Nothing~~
 ## TODO (that we can do with having a drive train built):
   ~~1. Determine what configuration we will go with (tank vs. arcade)~~
