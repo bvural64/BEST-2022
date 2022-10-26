@@ -8,6 +8,8 @@
 
 task main()
 {
+	short int neutralClawPos = 0;
+
 	// Initialize User Control using Infinite Loop
 	while (1 == 1)
 	{
@@ -71,12 +73,24 @@ task main()
 		{
 			motor[clawServo1] = 127;
 			wait1Msec(10);
+			neutralClawPos = motor[clawServo1];
+		}
+
+		else
+		{
+			motor[clawServo1] = neutralClawPos;
 		}
 
 		if (vexRT[Btn8D] == 1)
 		{
 			motor[clawServo1] = -127;
 			wait1Msec(10);
+			neutralClawPos = motor[clawServo1];
+		}
+
+		else 
+		{
+			motor[clawServo1] = neutralClawPos;
 		}
 
 		// IR Sensor
