@@ -67,6 +67,19 @@ task main()
 
   		// Code for claw open and close
 
+		if (vexRT[Btn8U] == 1)
+		{
+			motor[clawServo1] = -127;
+		}
 
+		else if (vexRT[Btn8D] == 1)
+		{
+			motor[clawServo1] = 127;
+		}
+
+		else
+		{
+			motor[clawServo1] = -127
+		}
   }
 }
