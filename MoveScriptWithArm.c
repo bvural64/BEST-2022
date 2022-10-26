@@ -16,13 +16,13 @@ task main()
 		//Checks if both joysticks are being used, then runs split arcade control
 		if(vexRT[Ch2] != 0 && vexRT[Ch4] != 0)
     	{
-				motor[leftMotor]  = (-vexRT[Ch2] - vexRT[Ch4])/2;  // (y + x)/2
+			motor[leftMotor]  = (-vexRT[Ch2] - vexRT[Ch4])/2;  // (y + x)/2
     		motor[rightMotor] = (-vexRT[Ch2] + vexRT[Ch4])/2;  // (y - x)/2
   		}
   		/*
   		Because values are averaged, when only one stick is used,
   		the maximum speeds of the motors are half of the sticks' maximum inputs.
-  		Thise if and else statements counteract this issue by only applying the
+  		This statement counteracts this issue by only applying the
   		average when it is turning, and only forward and backward input when it is not.
   		*/
   		else
@@ -31,14 +31,15 @@ task main()
   			motor[rightMotor] = -vexRT[Ch2];
   		}
 
-  		//Main arm motor control
+  		// Main arm motor control
 
-  		//inputs 65 to base motor when 5U button is pressed
+  		// Inputs 65 to base motor when 5U button is pressed
   		if(vexRT[Btn5U] == 1)
   		{
   			motor[baseArmMotor] = 65;
   		}
-  		//inputs -65 to base motor when 5D button is pressed
+
+  		// Inputs -65 to base motor when 5D button is pressed
   		else if(vexRT[Btn5D] == 1)
   		{
   			motor[baseArmMotor] = -65;
@@ -48,13 +49,13 @@ task main()
   			motor[baseArmMotor] = 0;
   		}
 
-  		 //inputs 65 to joint motor when 6U button is pressed
+  		// Inputs 65 to joint motor when 6U button is pressed
   		if(vexRT[Btn6U] == 1)
   		{
   			motor[jointArmMotor] = 65;
   		}
 
-  		//inputs -65 to joint motor when 6D button is pressed
+  		// Inputs -65 to joint motor when 6D button is pressed
   		else if(vexRT[Btn6D] == 1)
   		{
   			motor[jointArmMotor] = -65;
@@ -64,7 +65,7 @@ task main()
   			motor[jointArmMotor] = 0;
   		}
 
-  		//code for claw open and close
+  		// Code for claw open and close
 
 
   }
