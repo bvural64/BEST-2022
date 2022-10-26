@@ -77,9 +77,12 @@ task main()
 			motor[clawServo1] = 127;
 		}
 
+		// Default Position
 		else
 		{
-			motor[clawServo1] = -127
+			motor[clawServo1] = -127;
 		}
+
+		
   }
 }
