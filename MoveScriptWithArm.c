@@ -69,12 +69,14 @@ task main()
 
 		if (vexRT[Btn8U] == 1)
 		{
-			motor[clawServo1] = -127;
+			motor[clawServo1] = 127;
+			wait1Msec(10);
 		}
 
-		else if (vexRT[Btn8D] == 1)
+		if (vexRT[Btn8D] == 1)
 		{
-			motor[clawServo1] = 127;
+			motor[clawServo1] = -127;
+			wait1Msec(10);
 		}
 
 		// IR Sensor
