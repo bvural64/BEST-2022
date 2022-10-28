@@ -156,24 +156,28 @@ task main()
 	//	sendChar(UART1, 0xf0); // test send
 
 		if(vexRT[Btn7U] == 1)
-			{
+		{
 			sendChar(UART1, 0xAA);
-			}
+		}
+		
 		else if(vexRT[Btn7D] == 1)
-			{
-  		sendChar(UART1, 0x66);
-			}
+		{
+			sendChar(UART1, 0x66);
+		}
+
 		else if(vexRT[Btn7L] == 1)
-			{
-  		sendChar(UART1, 0x55);
-			}
+		{
+			sendChar(UART1, 0x55);
+		}
+
 		else if(vexRT[Btn7R] == 1)
-			{
-  		sendChar(UART1, 0x33);
-			}
+		{
+			sendChar(UART1, 0x33);
+		}
+
 		else
-			{
+		{
 			sendChar(UART1, 0xF0);
-			}
+		}
 }
 }

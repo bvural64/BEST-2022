@@ -19,6 +19,9 @@
 typedef unsigned long uint32_t;
 typedef unsigned short uint16_t;
 
+// Boolean Values
+typedef enum {false, true} bool;
+
 typedef struct
 {
 	uint16_t SR;
@@ -57,20 +60,22 @@ void setBaud(const TUARTs nPort, int baudRate)
 
 	// Write to USART BRR
 	USART_TypeDef *uart = USART2;
+	
 	if (nPort == UART2)
 	{
 		uart = USART3;
 	}
+
 	uart->BRR = (uint16_t)tmpreg;
 }
 
 // Entry point
 task main()
 {
-	 bool hasSentReset = false;
-	 bool hasSentRotate = false;
-	 bool hasSentDrive = false;
-	 bool hasSentLift = false;
+	bool hasSentReset = false;
+	bool hasSentRotate = false;
+	bool hasSentDrive = false;
+	bool hasSentLift = false;
 	// Set Baud
 	setBaud(UART1, 600);
 
@@ -113,6 +118,7 @@ task main()
   		{
   			motor[baseArmMotor] = -65;
   		}
+
   		else
   		{
   			motor[baseArmMotor] = 0;
@@ -129,6 +135,7 @@ task main()
   		{
   			motor[jointArmMotor] = -65;
   		}
+
   		else
   		{
   			motor[jointArmMotor] = 0;
@@ -164,29 +171,32 @@ task main()
 			sendChar(UART1, 0xAA);
 			hasSentReset = true;
 			hasSentRotate = false;
-	  	hasSentDrive = false;
+	  		hasSentDrive = false;
 	 		hasSentLift = false;
 		}
+
 		else if(vexRT[Btn7D] == 1 && hasSentDrive == false)
 		{
-  		sendChar(UART1, 0x66);
-  		hasSentReset = false;
+			sendChar(UART1, 0x66);
+			hasSentReset = false;
 			hasSentRotate = false;
 	 		hasSentDrive = true;
 	 		hasSentLift = false;
 		}
+
 		else if(vexRT[Btn7L] == 1 && hasSentLift == false)
 		{
-	  	sendChar(UART1, 0x55);
-	  	hasSentReset = false;
+			sendChar(UART1, 0x55);
+			hasSentReset = false;
 			hasSentRotate = false;
-		  hasSentDrive = false;
-		  hasSentLift = true;
+			hasSentDrive = false;
+			hasSentLift = true;
 		}
+
 		else if(vexRT[Btn7R] == 1 && hasSentRotate == false)
 		{
-		  sendChar(UART1, 0x33);
-		  hasSentReset = false;
+			sendChar(UART1, 0x33);
+			hasSentReset = false;
 			hasSentRotate = true;
 			hasSentDrive = false;
 			hasSentLift = false;
