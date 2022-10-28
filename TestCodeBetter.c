@@ -19,9 +19,6 @@
 typedef unsigned long uint32_t;
 typedef unsigned short uint16_t;
 
-// Boolean Values
-typedef enum {false, true} bool;
-
 typedef struct
 {
 	uint16_t SR;
