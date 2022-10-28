@@ -159,7 +159,7 @@ task main()
 		{
 			sendChar(UART1, 0xAA);
 		}
-		
+
 		else if(vexRT[Btn7D] == 1)
 		{
 			sendChar(UART1, 0x66);
